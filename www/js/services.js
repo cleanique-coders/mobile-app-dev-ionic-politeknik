@@ -73,7 +73,7 @@ angular.module('app.services', [])
 
 		   	confirmPopup.then(function(res) {
 			    if(res) {
-			       	var index = $localStorage.senarai.index(tuntutan);
+			       	var index = $localStorage.senarai.indexOf(tuntutan);
 
 			    	if(index != -1) {
 			    		$localStorage.senarai.splice(index, 1);
