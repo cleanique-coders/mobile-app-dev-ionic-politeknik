@@ -1,26 +1,27 @@
 # Mobile Applications Development with Ionic Framework
+
 ## Politeknik Malaysia
 ## 26 - 30 Jun 2016, Kota Bahru, Kelantan
 
-# Ionic Framework Training Overview
+### Ionic Framework Training Overview
 http://bit.ly/magic-ionic-mindmap
 
-# Ionic Framework Training Slide
+### Ionic Framework Training Slide
 http://bit.ly/cc-training-ionic
 
-# Training Installation Note
+### Training Installation Note
 http://bit.ly/cc-ionic-installation
 
-# Ionic Creator
+### Ionic Creator
 http://creator.ionic.io
 
-# Ionic Icons
+### Ionic Icons
 http://ionicons.com/
 
-# Clone Ionic Creator Project via CLI
+### Clone Ionic Creator Project via CLI
 ionic start [appName] creator:ba011a9abb53
 
-# Ionic Creator Project Structure
+### Ionic Creator Project Structure
 
 ```
 	/hooks - This directory may contain scripts used to customize cordova commands
@@ -34,4 +35,15 @@ ionic start [appName] creator:ba011a9abb53
 		/lib - This directory contain 3rd party JavaScript libraries
 		/templates - This directory contain page files (*.html)
 		/index.html - This file is the main file of the application
+```
+
+### Ionic `js` structure
+
+```
+	/js
+	  /app.js - main js file, application's JavaScript
+	  /controllers.js - handle request in & out
+	  /directives.js - manipulate DOM / elements / attributes
+	  /routes.js - define signboard / signage: route name, url, template, controller
+	  /services.js - define external services want to use, can be service / factory.
 ```

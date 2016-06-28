@@ -3,18 +3,16 @@
         <form id="kemaskiniTuntutan-form2" class="list ">
             <label class="item item-input " id="kemaskiniTuntutan-input3" name="name">
                 <span class="input-label">Nama Tuntutan</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="tuntutan.name">
             </label>
             <label class="item item-input " id="kemaskiniTuntutan-textarea2" name="description">
-                <span class="input-label">Penerangan</span><textarea placeholder=""></textarea>
+                <span class="input-label">Penerangan</span><textarea placeholder="" ng-model="tuntutan.description">{{ tuntutan.description }}</textarea>
             </label>
             <label class="item item-input " id="kemaskiniTuntutan-input4" name="amount">
                 <span class="input-label">Jumlah</span>
-                <input type="number" placeholder="">
+                <input type="number" placeholder="" ng-model="tuntutan.amount">
             </label>
-            <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-            </div>
+            <img ng-src="img/{{ tuntutan.photo }}" width="100%">
             <div>
                 <input type="file" file-model="myFile" class="item item-input">
             </div>

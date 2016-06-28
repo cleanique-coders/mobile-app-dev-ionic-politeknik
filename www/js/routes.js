@@ -10,7 +10,7 @@ angular.module('app.routes', [])
     
   
 
-      .state('tuntutan', {
+  .state('tuntutan', {
     url: '/tuntutan',
     templateUrl: 'templates/tuntutan.html',
     controller: 'tuntutanCtrl'
@@ -23,13 +23,14 @@ angular.module('app.routes', [])
   })
 
   .state('kemaskiniTuntutan', {
-    url: '/tuntutan/kemaskini',
+    url: '/tuntutan/kemaskini/:id',
     templateUrl: 'templates/kemaskiniTuntutan.html',
     controller: 'kemaskiniTuntutanCtrl'
   })
 
+  // pass parameter to url / view / page
   .state('perinciTuntutan', {
-    url: '/tuntutan/perinci',
+    url: '/tuntutan/perinci/:id',
     templateUrl: 'templates/perinciTuntutan.html',
     controller: 'perinciTuntutanCtrl'
   })

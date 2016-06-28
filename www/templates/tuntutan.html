@@ -1,31 +1,30 @@
 <ion-view title="Tuntutan" hide-back-button="true" id="page1" class=" ">
     <ion-content padding="true" class="has-header">
+        <!-- echo title -->
+        <!-- <h1>{{ title }}</h1> -->
+        
+        <!-- using ng-model -->
+        <!-- <input ng-model="title"> -->
+
         <a ui-sref="tambahTuntutan" id="tuntutan-button4" class=" button button-positive  button-block icon ion-plus "></a>
-        <ion-list id="tuntutan-list1" class=" ">
-            <ion-item class="item-thumbnail-left item-icon-right positive  " id="tuntutan-list-item3" ui-sref="perinciTuntutan">
-                <h2positive>Tuntutan Satu
-                    <p style="white-space:normal;">Tuntutan makanan....</p>
+
+        <!-- ng-repeat="item in list" -->
+        <ion-list id="tuntutan-list1" class=" " ng-repeat="tuntutan in $storage.senarai">
+            
+            <ion-item class="item-thumbnail-left item-icon-right positive  " id="tuntutan-list-item3" 
+            ui-sref="perinciTuntutan({id:tuntutan.id})">
+                
+                <!-- Show claim photo thumbnail -->
+                <img ng-src="img/{{ tuntutan.photo }}">
+
+                <!-- Display Tuntutan details -->
+                <h2positive>{{ tuntutan.name }}
+                    <p style="white-space:normal;">{{ tuntutan.description }}</p>
                     <i class="icon ion-eye"></i>
                 </h2positive>
             </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right positive  " id="tuntutan-list-item5" ui-sref="perinciTuntutan">
-                <h2positive>Tuntutan Satu
-                    <p style="white-space:normal;">Tuntutan makanan....</p>
-                    <i class="icon ion-eye"></i>
-                </h2positive>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right positive  " id="tuntutan-list-item6" ui-sref="perinciTuntutan">
-                <h2positive>Tuntutan Satu
-                    <p style="white-space:normal;">Tuntutan makanan....</p>
-                    <i class="icon ion-eye"></i>
-                </h2positive>
-            </ion-item>
-            <ion-item class="item-thumbnail-left item-icon-right positive  " id="tuntutan-list-item7" ui-sref="perinciTuntutan">
-                <h2positive>Tuntutan Satu
-                    <p style="white-space:normal;">Tuntutan makanan....</p>
-                    <i class="icon ion-eye"></i>
-                </h2positive>
-            </ion-item>
+            
         </ion-list>
+
     </ion-content>
 </ion-view>

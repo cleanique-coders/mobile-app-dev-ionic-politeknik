@@ -1,13 +1,16 @@
 <ion-view title="Perinci Tuntutan" id="page4" class=" ">
     <ion-content padding="true" class="has-header">
-        <h1 id="perinciTuntutan-heading2" style="color:#000000;" class=" ">Tuntutan Satu</h1>
-        <p id="perinciTuntutan-markdown3" style="color:#000000;" class=" ">Tuntutan makanan di...</p>
-        <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-            <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-        </div>
-        <p id="perinciTuntutan-markdown4" style="color:#000000;" class=" ">Jumlah tuntutan adalah 2.6billion</p>
+        
+        <h1 id="perinciTuntutan-heading2" style="color:#000000;" class=" ">{{ tuntutan.name }}</h1>
+        
+        <p id="perinciTuntutan-markdown3" style="color:#000000;" class=" ">{{ tuntutan.description }}</p>
+                
+        <img ng-src="img/{{ tuntutan.photo }}" width="100%">
+        
+        <p id="perinciTuntutan-markdown4" style="color:#000000;" class=" ">Jumlah tuntutan adalah RM {{ tuntutan.amount }}</p>
+
         <div id="perinciTuntutan-button-bar3" class=" button-bar ">
-            <a ui-sref="kemaskiniTuntutan" id="perinciTuntutan-button9" class=" button button-positive  button-block icon ion-edit "></a>
+            <a ui-sref="kemaskiniTuntutan({id:tuntutan.id})" id="perinciTuntutan-button9" class=" button button-positive  button-block icon ion-edit "></a>
             <a ui-sref="tuntutan" id="perinciTuntutan-button10" class=" button button-balanced  button-block icon ion-android-send "></a>
             <a ui-sref="tuntutan" id="perinciTuntutan-button11" class=" button button-assertive  button-block icon ion-ios-trash "></a>
         </div>
