@@ -3,24 +3,29 @@
         <form id="tambahTuntutan-form1" class="list ">
             <label class="item item-input " id="tambahTuntutan-input1" name="name">
                 <span class="input-label">Nama Tuntutan</span>
-                <input type="text" placeholder="">
+                <input type="text" placeholder="" ng-model="$parent.tuntutan.name">
             </label>
+            
             <label class="item item-input " id="tambahTuntutan-textarea1" name="description">
-                <span class="input-label">Penerangan</span><textarea placeholder=""></textarea>
+                <span class="input-label">Penerangan</span><textarea placeholder=""ng-model="$parent.tuntutan.description"></textarea>
             </label>
+            
             <label class="item item-input " id="tambahTuntutan-input2" name="amount">
                 <span class="input-label">Jumlah</span>
-                <input type="number" placeholder="">
+                <input type="number" placeholder="" ng-model="$parent.tuntutan.amount">
             </label>
-            <div style="margin: 0px; line-height: 250px; text-align: center; background-color: rgb(232, 235, 239);">
-                <i class="icon ion-image" style="font-size: 64px; color: rgb(136, 136, 136); vertical-align: middle;"></i>
-            </div>
+            
             <div>
                 <input type="file" file-model="myFile" class="item item-input">
             </div>
+
             <div id="tambahTuntutan-button-bar4" class=" button-bar ">
                 <a ui-sref="tuntutan" id="tambahTuntutan-button13" class=" button button-assertive  button-block icon ion-android-cancel "></a>
-                <a ui-sref="tuntutan" id="tambahTuntutan-button14" class=" button button-balanced  button-block icon ion-checkmark "></a>
+                
+                <!-- ng-click: do call function in $scope -->
+                <!-- in this case we call add function -->
+                <a ng-click="add()" id="tambahTuntutan-button14" class=" button button-balanced  button-block icon ion-checkmark "></a>
+
             </div>
         </form>
     </ion-content>

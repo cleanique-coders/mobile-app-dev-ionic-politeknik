@@ -3,10 +3,10 @@
         <form id="kemaskiniTuntutan-form2" class="list ">
             <label class="item item-input " id="kemaskiniTuntutan-input3" name="name">
                 <span class="input-label">Nama Tuntutan</span>
-                <input type="text" placeholder="" ng-model="tuntutan.name">
+                <input type="text" placeholder="" ng-model="$parent.tuntutan.name">
             </label>
             <label class="item item-input " id="kemaskiniTuntutan-textarea2" name="description">
-                <span class="input-label">Penerangan</span><textarea placeholder="" ng-model="tuntutan.description">{{ tuntutan.description }}</textarea>
+                <span class="input-label">Penerangan</span><textarea placeholder="" ng-model="tuntutan.description">{{ $parent.tuntutan.description }}</textarea>
             </label>
             <label class="item item-input " id="kemaskiniTuntutan-input4" name="amount">
                 <span class="input-label">Jumlah</span>
