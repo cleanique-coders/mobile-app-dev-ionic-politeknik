@@ -1,16 +1,19 @@
 angular.module('app.services', [])
 
+// Syntax for service
+.service('ServiceName',function(){
+	return {
+		name : function() {
 
+		}
+	}
+})
+
+// Authentication Service
 .service('AuthService', function($localStorage, $http) {
 	return {
 		login : function(email, password) {
-			$http.post('http:/api.dev/login',{email:email,password:password})
-				.then(function(){
-					// on success
-				})
-				.then(function(){
-					// on fail login
-				})
+			
 		},
 		logout : function() {
 
@@ -21,28 +24,7 @@ angular.module('app.services', [])
 	}
 })
 
-.service('BuffetRamadhanService', function(){
-	return {
-		today : function() {
-			// return buffet promotion for today
-			$http.get('http://api.buffetramadhan.com/today');
-		},
-		thisWeek : function() {
-			// return all available buffet for current week
-		}
-	}
-})
-
-// Syntax for service
-.service('ServiceName',function(){
-	return {
-		name : function() {
-
-		}
-	}
-})
-
-
+// Claim Service
 .service('ClaimService',function($localStorage, $ionicPopup, $state){
 	return {
 		initialize : function() {
@@ -61,7 +43,6 @@ angular.module('app.services', [])
 		    }, {});
 		},
 		add : function(tuntutan) {
-			console.log(tuntutan);
 			$localStorage.senarai.unshift(tuntutan);
 
 			var index = $localStorage.senarai.indexOf(tuntutan);
@@ -83,7 +64,7 @@ angular.module('app.services', [])
 	    		$localStorage.senarai[index] = tuntutan;
 	    	}
 		},
-		delete : function(id) {
+		delete : function(tuntutan) {
 
 			var confirmPopup = $ionicPopup.confirm({
 		     title: 'Delete Claim',
@@ -92,8 +73,8 @@ angular.module('app.services', [])
 
 		   	confirmPopup.then(function(res) {
 			    if(res) {
-			       	var index = $localStorage.senarai.indexOf(id);
-			       	
+			       	var index = $localStorage.senarai.index(tuntutan);
+
 			    	if(index != -1) {
 			    		$localStorage.senarai.splice(index, 1);
 			    		$state.go('tuntutan');
