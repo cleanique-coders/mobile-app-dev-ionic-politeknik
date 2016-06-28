@@ -1,6 +1,49 @@
 angular.module('app.services', [])
 
-.service('ClaimService',function($localStorage){
+
+.service('AuthService', function($localStorage, $http) {
+	return {
+		login : function(email, password) {
+			$http.post('http:/api.dev/login',{email:email,password:password})
+				.then(function(){
+					// on success
+				})
+				.then(function(){
+					// on fail login
+				})
+		},
+		logout : function() {
+
+		},
+		register : function() {
+
+		}
+	}
+})
+
+.service('BuffetRamadhanService', function(){
+	return {
+		today : function() {
+			// return buffet promotion for today
+			$http.get('http://api.buffetramadhan.com/today');
+		},
+		thisWeek : function() {
+			// return all available buffet for current week
+		}
+	}
+})
+
+// Syntax for service
+.service('ServiceName',function(){
+	return {
+		name : function() {
+
+		}
+	}
+})
+
+
+.service('ClaimService',function($localStorage, $ionicPopup, $state){
 	return {
 		initialize : function() {
 			if($localStorage.senarai == undefined) {
@@ -40,12 +83,23 @@ angular.module('app.services', [])
 	    		$localStorage.senarai[index] = tuntutan;
 	    	}
 		},
-		delete : function() {
-			var index = $localStorage.senarai.indexOf(ori);
+		delete : function(id) {
 
-	    	if(index != -1) {
-	    		$localStorage.senarai.splice(index, 1);
-	    	}
+			var confirmPopup = $ionicPopup.confirm({
+		     title: 'Delete Claim',
+		     template: 'Are you sure you want to delete this claim?'
+		   	});
+
+		   	confirmPopup.then(function(res) {
+			    if(res) {
+			       	var index = $localStorage.senarai.indexOf(id);
+			       	
+			    	if(index != -1) {
+			    		$localStorage.senarai.splice(index, 1);
+			    		$state.go('tuntutan');
+			    	}
+			     }
+			});
 		}
 	}
 })

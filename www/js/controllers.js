@@ -28,4 +28,8 @@ angular.module('app.controllers', [])
    
 .controller('perinciTuntutanCtrl', function($scope, $stateParams, ClaimService) {
 	$scope.tuntutan = ClaimService.getClaimById($stateParams.id);
+
+	$scope.delete = function(tuntutan) {
+		ClaimService.delete(tuntutan);
+	}
 })

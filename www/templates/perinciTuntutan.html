@@ -11,8 +11,10 @@
 
         <div id="perinciTuntutan-button-bar3" class=" button-bar ">
             <a ui-sref="kemaskiniTuntutan({id:tuntutan.id})" id="perinciTuntutan-button9" class=" button button-positive  button-block icon ion-edit "></a>
+            
             <a ui-sref="tuntutan" id="perinciTuntutan-button10" class=" button button-balanced  button-block icon ion-android-send "></a>
-            <a ui-sref="tuntutan" id="perinciTuntutan-button11" class=" button button-assertive  button-block icon ion-ios-trash "></a>
+
+            <a ng-click="delete(tuntutan)" id="perinciTuntutan-button11" class=" button button-assertive  button-block icon ion-ios-trash "></a>
         </div>
     </ion-content>
 </ion-view>
